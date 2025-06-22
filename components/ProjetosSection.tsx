@@ -12,34 +12,34 @@ export default function ProjetosSection() {
     {
       title: 'Tic Tac Toe',
       description: 'A classic Tic Tac Toe game built with Python.',
-      techIcons: ['/images/p.svg'], // FAZER: Substitua pelo caminho real do ícone Python
+      techIcons: ['./images/p.svg'], // FAZER: Substitua pelo caminho real do ícone Python
       codeLink: '#', // FAZER: Substitua pelo link real do código
       projectLink: 'https://github.com/Ribeirotmr/mEP_EP/tree/main/jogo_da_velha_robo',
-      image: '/images/tictactoe.png',
+      image: './images/tictactoe.png',
     },
     {
       title: 'Data Base normalization',
       description: 'This project demonstrates the normalization of a database schema',
-      techIcons: ['/images/mysql.svg', '/images/sql2.svg'], // FAZER: Substitua pelo caminho real do ícone MySQL
+      techIcons: ['./images/mysql.svg', './images/sql2.svg'], // FAZER: Substitua pelo caminho real do ícone MySQL
       codeLink: '#', // FAZER: Substitua pelo link real do código
       projectLink: '',
-      image: '/images/data.jpeg',
+      image: './images/data.jpeg',
     },
     {
       title: 'Tradutor de sinais',
       description: 'A web application that translates sign language, but not finished yet.',
-      techIcons: ['/images/html.svg', '/images/css.svg', '/images/js.svg'], // FAZER: Substitua pelos caminhos reais dos ícones Python e Flask
+      techIcons: ['./images/html.svg', './images/css.svg', './images/js.svg'], // FAZER: Substitua pelos caminhos reais dos ícones Python e Flask
       codeLink: '#', // FAZER: Substitua pelo link real do código
       projectLink: '#', // FAZER: Substitua pelo link real do projeto
-      image: '/images/sinais.png',
+      image: './images/sinais.png',
     },
     {
       title: 'Iniciação à Científica',
       description: 'A scientific initiation project that explores the use of quantum computing Quantum Computing Applied to Optimization Problems',
-      techIcons: ['/images/p.svg', '/images/qiskit.svg', '/images/ibm.svg', '/images/qc.png'], // FAZER: Substitua pelos caminhos reais dos ícones Python e Flask
+      techIcons: ['./images/p.svg', './images/qiskit.svg', './images/ibm.svg', './images/qc.png'], // FAZER: Substitua pelos caminhos reais dos ícones Python e Flask
       codeLink: '#', // FAZER: Substitua pelo link real do código
       projectLink: '#', // FAZER: Substitua pelo link real do projeto
-      image: '/images/qcman.png',
+      image: './images/qcman.png',
     }
 
   ];
