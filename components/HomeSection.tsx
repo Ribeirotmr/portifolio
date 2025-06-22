@@ -14,7 +14,7 @@ export default function HomeSection() {
         </div>
                 <div className="w-1/2 flex justify-center items-center">
           <img
-            src="/images/dev.png"
+            src="./images/dev.png"
             alt="Developer"
             className="w-full h-auto custom-bounce animate-delay-900" //custom-bounce animate-delay-[900ms] w-full h-auto custom-bounce animate-delay-900
           />
