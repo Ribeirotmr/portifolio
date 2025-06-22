@@ -59,54 +59,51 @@ export default function AcademicSection() {
   }, []);
 
   return (
-    <section id="academicSection" className="min-h-screen flex flex-col text-white"> {/*bg-[#000000]*/}
-      <div className="container mx-auto pt-20 text-center">
-        <div className="flex items-center my-8">
-          <div className="flex-grow border-t border-purple-700 mx-4"></div>
-          <div className="bg-purple-950 px-6 py-2 rounded">
-            <h2 className="text-4xl font-bold text-white">ACADEMIC</h2>
+    <section id="academicSection" className="min-h-screen flex flex-col text-white">
+      <div className="container mx-auto pt-10 md:pt-20 text-center">
+        <div className="flex items-center my-4 md:my-8">
+          <div className="flex-grow border-t border-purple-700 mx-2 md:mx-4"></div>
+          <div className="bg-purple-950 px-4 md:px-6 py-1 md:py-2 rounded">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">ACADEMIC</h2>
           </div>
-          <div className="flex-grow border-t border-purple-700 mx-4"></div>
+          <div className="flex-grow border-t border-purple-700 mx-2 md:mx-4"></div>
         </div>
         <div className="relative flex flex-col items-center" ref={timelineRef}>
           {/* Linha central estendida */}
-          <div className="absolute w-1 bg-white h-[100%] left-1/2 transform -translate-x-1/2 top-0"></div>
+          <div className="absolute w-1 bg-white h-[100%] left-1/2 transform -translate-x-1/2 top-0 md:block hidden"></div>
           
           {timelineEvents.map((event, index) => (
             <div
               key={index}
-              className={`flex w-full mb-12 items-center timeline-card opacity-0 ${
-                event.side === 'left' ? 'flex-row-reverse md:flex-row-reverse' : 'flex-row'
+              className={`flex w-full mb-6 md:mb-12 items-center timeline-card opacity-0 ${
+                event.side === 'right' ? 'flex-col md:flex-row-reverse' : 'flex-col md:flex-row'
               }`}
             >
-              <div className="w-1/2 hidden md:block"></div>
-              <div
-                className={`w-full md:w-1/2 p-8 ${
-                  event.side === 'left' ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'
-                }`}
-              >
+              <div className={`w-full md:w-1/2 p-4 md:p-8 ${
+                event.side === 'right' ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'
+              }`}>
                 <div
-                  className={`relative bg-white text-black rounded-lg shadow-md p-8 max-w-sm mx-auto transform transition-transform duration-700 ${
-                    event.side === 'left' ? 'md:-translate-x-6' : 'md:translate-x-6'
+                  className={`relative bg-white text-black rounded-lg shadow-md p-4 md:p-8 max-w-sm mx-auto transform transition-transform duration-700 ${
+                    event.side === 'right' ? 'md:-translate-x-6' : 'md:translate-x-6'
                   }`}
                 >
                   <img
                     src={event.icon}
                     alt={event.title}
-                    className="h-16 w-16 mb-4 mx-auto md:mx-0 animate-bounce"
+                    className="h-12 md:h-16 w-12 md:w-16 mb-2 md:mb-4 mx-auto md:mx-0 animate-bounce"
                   />
-                  <h3 className="text-xl font-bold">{event.title}</h3>
-                  <p className="text-sm text-gray-600">{event.year}</p>
-                  <p className="mt-2">{event.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold">{event.title}</h3>
+                  <p className="text-xs md:text-sm text-gray-600">{event.year}</p>
+                  <p className="mt-1 md:mt-2">{event.description}</p>
                   <div
-                    className={`absolute top-1/2 h-px bg-white w-12 ${
+                    className={`absolute top-1/2 h-px bg-white w-8 md:w-12 ${
                       event.side === 'left' ? 'right-0 translate-x-full' : 'left-0 -translate-x-full'
-                    }`}
+                    } md:block hidden`}
                   ></div>
                 </div>
               </div>
-              <div className="absolute left-1/2 transform -translate-x-1/2">
-                <div className="w-6 h-6 bg-[#007bff] border-4 border-white rounded-full pulse"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 md:block hidden">
+                <div className="w-4 md:w-6 h-4 md:h-6 bg-[#007bff] border-2 md:border-4 border-white rounded-full pulse"></div>
               </div>
             </div>
           ))}
