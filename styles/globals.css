@@ -107,20 +107,19 @@ html, body {
 /* CSS para ContatoSection */
 .social-container {
   height: 400px;
-  min-width: fit-content; 
-  justify-content: space-between; /* Alinha os elementos com espaço entre eles */
+  min-width: fit-content;
+  justify-content: space-between;
   margin: 15rem 0;
   perspective: 3000px;
   text-align: center;
   position: relative;
   display: flex;
   align-items: flex-start;
-  flex-wrap: nowrap; /* Força uma única linha */
-  width: 100%; /* Usa a largura total disponível */
-  max-width: 1300px; /* Ajustado para conter os 5 botões */
-  
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1300px;
   font-family: "Open Sans", sans-serif;
-  gap: 0.5rem ; /* Reduzido o gap para economizar espaço */
+  gap: 0.5rem;
 }
 
 .social-button {
@@ -129,7 +128,7 @@ html, body {
   width: 250px;
   transform-style: preserve-3d;
   position: relative;
-  transform: rotateX(-40deg) rotateY(40deg); /* Efeito 3D aplicado por padrão */
+  transform: rotateX(-40deg) rotateY(40deg);
   transition: all 0.5s ease-in, transform 0.5s;
  
 }
@@ -187,13 +186,14 @@ html, body {
   background: linear-gradient(135deg, #0077B5, #0A66C2, #004182);
   color: white;
 }
+
 .side {
   position: absolute;
   opacity: 0.5;
   transition: 0.5s;
   font-size: 2rem;
   text-decoration: none;
-  border: 1px solid #808080; /* Linha cinza nas faces */
+  border: 1px solid #808080;
 }
 
 .side:nth-child(1) {
@@ -204,11 +204,11 @@ html, body {
   height: 80px;
   width: 250px;
   font-weight: 900;
-  transform: rotateX(90deg) translateZ(40px); /* Centralizado por padrão */
+  transform: rotateX(90deg) translateZ(40px);
   padding: 0;
   margin: 0;
-  color: white; /* Cor das letras */
-  border: none; /* Remove a borda da face frontal para evitar sobreposição */
+  color: white;
+  border: none;
 }
 
 .side:nth-child(2) {
@@ -245,15 +245,32 @@ html, body {
 }
 
 @media (max-width: 768px) {
+  nav {
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+  }
+  nav .md\:flex {
+    display: none;
+  }
+  nav .md\:flex.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background: #5f5f5f;
+    padding: 1rem;
+    border-radius: 0 0 4px 4px;
+  }
   .social-container {
     height: 600px;
-    flex-direction: column; /* Empilha em mobile */
+    flex-direction: column;
     align-items: center;
   }
   .social-button {
     width: 150px;
     height: 20px;
-    margin: 1rem 0; /* Espaçamento vertical em mobile */
+    margin: 1rem 0;
   }
   .side:nth-child(1),
   .side:nth-child(2),
@@ -271,4 +288,166 @@ html, body {
   .side:nth-child(2) {
     height: 50px;
   }
+  /* Ajustes para HomeSection */
+  #homeSection .flex {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  #homeSection .w-full.md\:w-1\/2:first-child {
+    margin-bottom: 2rem;
+  }
+  
+  #homeSection img {
+    width: 100%;
+    max-width: 300px;
+  }
+  #homeSection .text-3xl {
+    font-size: 1.5rem;
+  }
+  #homeSection .text-lg {
+    font-size: 1rem;
+  }
+  /* Ajustes para ProjetosSection */
+  #projetosSection .container {
+    padding: 0.5rem;
+  }
+  #projetosSection .flex.items-center {
+    margin: 1rem 0;
+  }
+  #projetosSection .text-3xl {
+    font-size: 2rem;
+  }
+  #projetosSection .h-24.md\:h-32 {
+    height: 16rem;
+  }
+  #projetosSection .text-lg.md\:text-xl {
+    font-size: 1rem;
+  }
+  #projetosSection .text-xs.md\:text-sm {
+    font-size: 0.75rem;
+  }
+  #projetosSection .h-10.md\:h-14 {
+    height: 6rem;
+  }
+  #projetosSection .w-10.md\:w-14 {
+    width: 6rem;
+  }
+  #projetosSection .p-4.md\:p-6 {
+    padding: 0.5rem;
+  }
+  #projetosSection .mb-1.md\:mb-2 {
+    margin-bottom: 0.25rem;
+  }
+  #projetosSection .px-1.md\:px-2 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  /* Ajustes para AcademicSection */
+  #academicSection .container {
+    padding-top: 1rem;
+  }
+  #academicSection .flex.items-center {
+    margin: 1rem 0;
+  }
+  #academicSection .text-3xl {
+    font-size: 2rem;
+  }
+  #academicSection .flex-col .timeline-card {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  #academicSection .w-full.md\:w-1\/2 {
+    width: 100%;
+  }
+  #academicSection .p-4.md\:p-8 {
+    padding: 0.5rem;
+  }
+  #academicSection .max-w-sm {
+    max-width: 90%;
+  }
+  #academicSection .h-12.md\:h-16 {
+    height: 8rem;
+  }
+  #academicSection .w-12.md\:w-16 {
+    width: 8rem;
+  }
+  #academicSection .text-lg.md\:text-xl {
+    font-size: 1rem;
+  }
+  #academicSection .text-xs.md\:text-sm {
+    font-size: 0.75rem;
+  }
+  #academicSection .mt-1.md\:mt-2 {
+    margin-top: 0.25rem;
+  }
+  #academicSection .w-8.md\:w-12 {
+    width: 4rem;
+  }
+  #academicSection .w-4.md\:w-6 {
+    width: 2rem;
+  }
+  #academicSection .h-4.md\:h-6 {
+    height: 2rem;
+  }
+  #academicSection .border-2.md\:border-4 {
+    border-width: 2px;
+  }
+  /* Ajustes para garantir a posição correta dos cards em desktop */
+  #academicSection .timeline-card {
+    justify-content: center;
+  }
+  #academicSection .md\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+  #academicSection .md\:flex-row {
+    flex-direction: row !important;
+  }
+  /* Ajustes para SkillsSection */
+  #skillsSection .flex.items-center {
+    margin: 1rem 0;
+  }
+  #skillsSection .text-3xl {
+    font-size: 2rem;
+  }
+  #skillsSection .min-w-\[140px\], 
+  #skillsSection .md\:min-w-\[180px\] {
+    min-width: 100px;
+  }
+  #skillsSection .h-16.md\:h-24 {
+    height: 10rem;
+  }
+  #skillsSection .w-16.md\:w-24 {
+    width: 10rem;
+  }
+  #skillsSection .text-sm.md\:text-lg {
+    font-size: 0.875rem;
+  }
+  #skillsSection .p-2.md\:p-4 {
+    padding: 0.5rem;
+  }
+  #skillsSection .mb-1.md\:mb-2 {
+    margin-bottom: 0.25rem;
+  }
+
+
 }
+
+.blinking-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  color: #22c55e;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
