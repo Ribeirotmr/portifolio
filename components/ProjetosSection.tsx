@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 interface Project {
   title: string;
   description: string;
@@ -28,7 +29,7 @@ export default function ProjetosSection() {
     {
       title: 'Tradutor de sinais',
       description: 'A web application that translates sign language, but not finished yet.',
-      techIcons: ['./images/html.svg', './images/css.svg', './images/js.svg'], // FAZER: Substitua pelos caminhos reais dos ícones Python e Flask
+      techIcons: ['./images/html.svg', './images/css.svg', './images/js.svg'], // FAZER: Substitua pelos caminhos reais dos ícones
       codeLink: '#', // FAZER: Substitua pelo link real do código
       projectLink: '#', // FAZER: Substitua pelo link real do projeto
       image: './images/sinais.png',
@@ -36,16 +37,36 @@ export default function ProjetosSection() {
     {
       title: 'Iniciação à Científica',
       description: 'A scientific initiation project that explores the use of quantum computing Quantum Computing Applied to Optimization Problems',
-      techIcons: ['./images/p.svg', './images/qiskit.svg', './images/ibm.svg', './images/qc.png'], // FAZER: Substitua pelos caminhos reais dos ícones Python e Flask
+      techIcons: ['./images/p.svg', './images/qiskit.svg', './images/ibm.svg', './images/qc.png'], // FAZER: Substitua pelos caminhos reais dos ícones
       codeLink: '#', // FAZER: Substitua pelo link real do código
       projectLink: '#', // FAZER: Substitua pelo link real do projeto
       image: './images/qcman.png',
     }
-
   ];
 
+  // Função para observar a visibilidade dos cards
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in');
+      }
+    });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.1, // Inicia a animação quando 10% do elemento está visível
+    });
+
+    const projectCards = document.querySelectorAll('#projetosSection .bg-gray-300');
+    projectCards.forEach((card) => observer.observe(card));
+
+    // Limpeza do observador ao desmontar o componente
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="projetosSection" className="min-h-screen flex items-center justify-center"> {/*bg-[#000000]*/}
+    <section id="projetosSection" className="min-h-screen flex items-center justify-center">
       <div className="container mx-auto p-4">
         {/* Título no estilo de SKILLS e MINHA FORMAÇÃO */}
         <div className="flex items-center my-8">
@@ -111,3 +132,5 @@ export default function ProjetosSection() {
     </section>
   );
 }
+
+// Adi
