@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 interface Project {
   title: string;
   description: string;
@@ -67,51 +68,51 @@ export default function ProjetosSection() {
 
   return (
     <section id="projetosSection" className="min-h-screen flex items-center justify-center">
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-2 md:p-4">
         {/* Título no estilo de SKILLS e MINHA FORMAÇÃO */}
-        <div className="flex items-center my-8">
-          <div className="flex-grow border-t border-purple-700 mx-4"></div>
-          <div className="bg-purple-950 px-6 py-2 rounded">
-            <h2 className="text-4xl font-bold text-white">PROJETOS</h2>
+        <div className="flex items-center my-4 md:my-8">
+          <div className="flex-grow border-t border-purple-700 mx-2 md:mx-4"></div>
+          <div className="bg-purple-950 px-4 md:px-6 py-1 md:py-2 rounded">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">PROJETOS</h2>
           </div>
-          <div className="flex-grow border-t border-purple-700 mx-4"></div>
+          <div className="flex-grow border-t border-purple-700 mx-2 md:mx-4"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-300 p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-[#777777] hover:text-white"
+              className="bg-gray-300 p-4 md:p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-[#777777] hover:text-white"
             >
               {project.image && (
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-32 w-full object-cover rounded-lg mb-4"
+                  className="h-24 md:h-32 w-full object-cover rounded-lg mb-2 md:mb-4"
                   onLoad={() => console.log(`Imagem carregada: ${project.image}`)}
                   onError={() => console.error(`Erro ao carregar imagem: ${project.image}`)}
                 />
               )}
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="text-sm mb-2">{project.description}</p>
-              <div className="flex gap-2 mb-2">
+              <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">{project.title}</h3>
+              <p className="text-xs md:text-sm mb-1 md:mb-2">{project.description}</p>
+              <div className="flex gap-1 md:gap-2 mb-1 md:mb-2">
                 {project.techIcons.map((icon, i) => (
                   <img
                     key={i}
                     src={icon}
                     alt={`Tech icon ${i + 1}`}
-                    className="h-14 w-14 object-contain transition-colors duration-300"
+                    className="h-10 md:h-14 w-10 md:w-14 object-contain transition-colors duration-300"
                     style={{ filter: 'grayscale(0%) brightness(80%)', transition: 'filter 0.3s' }}
                     onMouseEnter={(e) => (e.currentTarget.style.filter = 'grayscale(0%) brightness(100%)')}
                     onMouseLeave={(e) => (e.currentTarget.style.filter = 'grayscale(0%) brightness(80%)')}
                   />
                 ))}
               </div>
-              <div className="flex gap-2">
-                <a href={project.codeLink} className="bg-white text-black px-2 py-1 rounded text-sm hover:bg-gray-300">
+              <div className="flex gap-1 md:gap-2">
+                <a href={project.codeLink} className="bg-white text-black px-1 md:px-2 py-1 rounded text-xs md:text-sm hover:bg-gray-300">
                   Code
                 </a>
                 {project.projectLink && (
-                  <a href={project.projectLink} className="bg-white text-black px-2 py-1 rounded text-sm hover:bg-gray-300">
+                  <a href={project.projectLink} className="bg-white text-black px-1 md:px-2 py-1 rounded text-xs md:text-sm hover:bg-gray-300">
                     View Project
                   </a>
                 )}
@@ -120,10 +121,10 @@ export default function ProjetosSection() {
           ))}
         </div>
         {/* Botão "View all" centralizado */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-4 md:mt-8">
           <a
             href="https://github.com/Ribeirotmr" // FAZER: Substitua pelo link real do seu GitHub
-            className="bg-purple-950 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors duration-300"
+            className="bg-purple-950 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-purple-700 transition-colors duration-300"
           >
             View all
           </a>
@@ -132,5 +133,3 @@ export default function ProjetosSection() {
     </section>
   );
 }
-
-// Adi
