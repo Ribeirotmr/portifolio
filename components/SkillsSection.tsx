@@ -55,41 +55,39 @@ export default function SkillsSection() {
     return () => clearInterval(interval);
   }, [isMouseOver, skills.length]);
 
-  
-
   return (
-    <section id="skillsSection" className="min-h-screen flex flex-col  text-white"> {/*bg-[#000000]*/}
-      <div className="flex items-center my-8">
-        <div className="flex-grow border-t border-purple-700 mx-4"></div>
-        <div className="text-center bg-purple-950 px-6 py-2 rounded">
-          <h2 className="text-4xl font-bold text-white">SKILLS</h2>
+    <section id="skillsSection" className="min-h-screen flex flex-col text-white">
+      <div className="flex items-center my-4 md:my-8">
+        <div className="flex-grow border-t border-purple-700 mx-2 md:mx-4"></div>
+        <div className="text-center bg-purple-950 px-4 md:px-6 py-1 md:py-2 rounded">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">SKILLS</h2>
         </div>
-        <div className="flex-grow border-t border-purple-700 mx-4"></div>
+        <div className="flex-grow border-t border-purple-700 mx-2 md:mx-4"></div>
       </div>
 
       <div className="flex-grow flex items-center justify-center overflow-x-hidden">
-        <div className="relative w-full max-w-[calc((180px+16px)*11*2)] mx-auto">
+        <div className="relative w-full max-w-[calc((140px+16px)*11*2)] md:max-w-[calc((180px+16px)*11*2)] mx-auto">
           <div
             ref={carouselRef}
             id="skillsCarousel"
             className="flex gap-4 overflow-hidden"
-            style={{ width: `${(180 + 16) * skills.length * 2}px` }}
+            style={{ width: `${(140 + 16) * skills.length * 2}px`, minWidth: '100%' }}
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}
           >
             {[...skills, ...skills].map((skill, index) => (
               <div
                 key={`${skill.name}-${index}`}
-                className="skill-slide flex flex-col items-center min-w-[180px] text-white rounded-lg shadow-md p-4 bg-gray-900"
+                className="skill-slide flex flex-col items-center min-w-[140px] md:min-w-[180px] text-white rounded-lg shadow-md p-2 md:p-4 bg-gray-900"
               >
                 <img
                   src={skill.image}
                   alt={skill.name}
-                  className="h-24 w-24 mb-2 pulse"
+                  className="h-16 md:h-24 w-16 md:w-24 mb-1 md:mb-2 pulse"
                   onLoad={() => console.log(`Imagem carregada: ${skill.image}`)}
                   onError={() => console.error(`Erro ao carregar imagem: ${skill.image}`)}
                 />
-                <p className="text-lg font-semibold">{skill.name}</p>
+                <p className="text-sm md:text-lg font-semibold">{skill.name}</p>
               </div>
             ))}
           </div>
