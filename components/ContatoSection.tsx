@@ -66,7 +66,8 @@ const ContatoSection = () => {
           {/* Botão LinkedIn */}
           <div className="social-button linkedin">
             <a href="https://linkedin.com/in/seuusuario" target="_blank" className="side">
-              <img src="./images/linkedin.svg" alt="LinkedIn" className="h-12 w-12" />               LinkedIn
+              <img src="./images/linkedin.svg" alt="LinkedIn" className="h-12 w-12" />
+              LinkedIn
             </a>
             <div className="side"></div>
             <div className="side"></div>
@@ -78,6 +79,9 @@ const ContatoSection = () => {
       </div>
     </section>
   );
+  
 };
+
+
 
 export default ContatoSection;
