@@ -7,14 +7,14 @@ interface Skill {
 
 export default function SkillsSection() {
   const skills: Skill[] = [
-    { name: 'Html5', image: '/images/html.svg' },
-    { name: 'Tailwind', image: '/images/tail.svg' },
-    { name: 'Javascript', image: '/images/js.svg' },
-    { name: 'Python', image: '/images/p.svg' },
-    { name: 'C', image: '/images/c.svg' },
-    { name: 'C++', image: '/images/cpp.svg' },
-    { name: 'MySQL', image: '/images/mysql.svg' },
-    { name: 'SQL', image: '/images/sql2.svg' },
+    { name: 'Html5', image: './images/html.svg' },
+    { name: 'Tailwind', image: './images/tail.svg' },
+    { name: 'Javascript', image: './images/js.svg' },
+    { name: 'Python', image: './images/p.svg' },
+    { name: 'C', image: './images/c.svg' },
+    { name: 'C++', image: './images/cpp.svg' },
+    { name: 'MySQL', image: './images/mysql.svg' },
+    { name: 'SQL', image: './images/sql2.svg' },
   ];
 
   const carouselRef = useRef<HTMLDivElement>(null);
