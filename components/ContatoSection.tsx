@@ -27,7 +27,7 @@ const ContatoSection = () => {
           {/* Botão Gmail */}
           <div className="social-button gmail">
             <a href="mailto:seuemail@gmail.com" target="_blank" className="side">
-              <img src="/images/gmail.svg" alt="Gmail" className="h-12 w-12" /> 
+              <img src="./images/gmail.svg" alt="Gmail" className="h-12 w-12" /> 
               Gmail
             </a>
             <div className="side"></div>
@@ -40,7 +40,7 @@ const ContatoSection = () => {
           {/* Botão X (Twitter) */}
           <div className="social-button x">
             <a href="https://twitter.com/seuusuario" target="_blank" className="side">
-              <img src="/images/tw.svg" alt="X" className="h-12 w-12"/>
+              <img src="./images/tw.svg" alt="X" className="h-12 w-12"/>
               X
             </a>
             <div className="side"></div>
@@ -53,7 +53,7 @@ const ContatoSection = () => {
           {/* Botão Instagram */}
           <div className="social-button instagram">
             <a href="https://instagram.com/seuusuario" target="_blank" className="side">
-              <img src="/images/instagram.svg" alt="Instagram" className="h-12 w-12" />
+              <img src="./images/instagram.svg" alt="Instagram" className="h-12 w-12" />
               Instagram
             </a>
             <div className="side"></div>
@@ -66,7 +66,7 @@ const ContatoSection = () => {
           {/* Botão LinkedIn */}
           <div className="social-button linkedin">
             <a href="https://linkedin.com/in/seuusuario" target="_blank" className="side">
-              <img src="/images/linkedin.svg" alt="LinkedIn" className="h-12 w-12" />               LinkedIn
+              <img src="./images/linkedin.svg" alt="LinkedIn" className="h-12 w-12" />               LinkedIn
             </a>
             <div className="side"></div>
             <div className="side"></div>
