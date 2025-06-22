@@ -55,6 +55,8 @@ export default function SkillsSection() {
     return () => clearInterval(interval);
   }, [isMouseOver, skills.length]);
 
+  
+
   return (
     <section id="skillsSection" className="min-h-screen flex flex-col  text-white"> {/*bg-[#000000]*/}
       <div className="flex items-center my-8">
