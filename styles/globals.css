@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
+  color: white;
+}
+
+.skill-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-bounce {
+  animation: custom-bounce 7s infinite;
+}
+
+.pulse {
+  animation: pulse infinite;
+}
+
+.color-transition {
+  transition: color 0.5s;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(0.9); }
+}
+
+@keyframes custom-bounce {
+  0%, 100% {
+    transform: translateY(-9%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 1.5s ease-in-out;
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+#skillsCarousel {
+  overflow-x: hidden;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateX(var(--translate-x, 0)); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+  --translate-x: 50px; /* Padrão para direita */
+}
+
+.timeline-card:nth-child(odd) {
+  --translate-x: -50px; /* Para cards à esquerda */
+}
+
+/* CSS para ContatoSection */
+.social-container {
+  height: 400px;
+  min-width: fit-content; 
+  justify-content: space-between; /* Alinha os elementos com espaço entre eles */
+  margin: 15rem 0;
+  perspective: 3000px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* Força uma única linha */
+  width: 100%; /* Usa a largura total disponível */
+  max-width: 1300px; /* Ajustado para conter os 5 botões */
+  
+  font-family: "Open Sans", sans-serif;
+  gap: 0.5rem ; /* Reduzido o gap para economizar espaço */
+}
+
+.social-button {
+  font-size: 2rem;
+  height: 30px;
+  width: 250px;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotateX(-40deg) rotateY(40deg); /* Efeito 3D aplicado por padrão */
+  transition: all 0.5s ease-in, transform 0.5s;
+ 
+}
+
+.social-button:hover .side:nth-child(2) {
+  box-shadow: none;
+}
+
+.github:hover {
+  transform: rotateX(-80deg) rotateY(3deg) rotateZ(20deg) translateZ(-15px) translateY(-20px) translateX(-7px) scale3d(1.1, 1.1, 1.1);
+}
+
+.github:hover .side {
+  background: linear-gradient(145deg, #585858, #1d1d1d);
+  color: white;
+}
+
+.gmail:hover {
+  transform: rotateX(-80deg) rotateY(3deg) rotateZ(20deg) translateZ(-15px) translateY(-20px) translateX(-7px) scale3d(1.1, 1.1, 1.1);
+}
+
+.gmail:hover .side {
+  background: linear-gradient(135deg, #ce746e, #c2675f, #fbbc05);
+  color: white;
+}
+
+
+.instagram:hover .side {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  color: white;
+}
+
+.x:hover {
+  transform: rotateX(-80deg) rotateY(3deg) rotateZ(20deg) translateZ(-15px) translateY(-20px) translateX(-7px) scale3d(1.1, 1.1, 1.1);
+}
+
+.x:hover .side {
+  background: linear-gradient(135deg, #222222, #0f2027, #203a43, #1e343d);
+  color: white;
+}
+
+.instagram:hover {
+  transform: rotateX(-80deg) rotateY(3deg) rotateZ(20deg) translateZ(-15px) translateY(-20px) translateX(-7px) scale3d(1.1, 1.1, 1.1);
+}
+
+.instagram:hover .side {
+  background-color: #c32aa3;
+}
+
+.linkedin:hover {
+  transform: rotateX(-80deg) rotateY(3deg) rotateZ(20deg) translateZ(-15px) translateY(-20px) translateX(-7px) scale3d(1.1, 1.1, 1.1);
+}
+
+.linkedin:hover .side {
+  background: linear-gradient(135deg, #0077B5, #0A66C2, #004182);
+  color: white;
+}
+.side {
+  position: absolute;
+  opacity: 0.5;
+  transition: 0.5s;
+  font-size: 2rem;
+  text-decoration: none;
+  border: 1px solid #808080; /* Linha cinza nas faces */
+}
+
+.side:nth-child(1) {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 250px;
+  font-weight: 900;
+  transform: rotateX(90deg) translateZ(40px); /* Centralizado por padrão */
+  padding: 0;
+  margin: 0;
+  color: white; /* Cor das letras */
+  border: none; /* Remove a borda da face frontal para evitar sobreposição */
+}
+
+.side:nth-child(2) {
+  opacity: 0.4;
+  height: 80px;
+  width: 250px;
+  transform: rotateX(-90deg) translateZ(-10px);
+  box-shadow: -5px -5px 30px -5px;
+}
+
+.side:nth-child(3) {
+  height: 30px;
+  width: 80px;
+  transform: rotateY(-90deg) translateZ(40px);
+}
+
+.side:nth-child(4) {
+  height: 30px;
+  width: 80px;
+  transform: rotateY(90deg) translateZ(40px);
+  right: 0;
+}
+
+.side:nth-child(5) {
+  height: 30px;
+  width: 250px;
+  transform: rotateX(0deg) translateZ(40px);
+}
+
+.side:nth-child(6) {
+  height: 30px;
+  width: 250px;
+  transform: rotateX(180deg) translateZ(40px);
+}
+
+@media (max-width: 768px) {
+  .social-container {
+    height: 600px;
+    flex-direction: column; /* Empilha em mobile */
+    align-items: center;
+  }
+  .social-button {
+    width: 150px;
+    height: 20px;
+    margin: 1rem 0; /* Espaçamento vertical em mobile */
+  }
+  .side:nth-child(1),
+  .side:nth-child(2),
+  .side:nth-child(5),
+  .side:nth-child(6) {
+    width: 150px;
+  }
+  .side:nth-child(3),
+  .side:nth-child(4) {
+    width: 50px;
+  }
+  .side:nth-child(1) {
+    height: 50px;
+  }
+  .side:nth-child(2) {
+    height: 50px;
+  }
+}
