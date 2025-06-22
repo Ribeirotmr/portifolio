@@ -48,30 +48,28 @@ export default function HomeSection() {
 
   return (
     <div id="homeSection" className="min-h-screen flex items-center">
-      <div className="flex w-full items-center justify-center p-20">
-        <div className="w-1/2">
-          <p className="text-4xl text-green-400 font-bold animate-bounce">
+      <div className="flex w-full items-center justify-center p-4 md:p-20">
+        <div className="w-full md:w-1/2">
+          <p className="text-3xl md:text-4xl text-green-400 font-bold animate-bounce">
             Olá! eu me chamo
           </p>
-          <h1 className="text-4xl font-bold text-green-400 mt-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-green-400 mt-2">
             Thierry Ribeiro
           </h1>
-
           <p
             ref={textRef}
-            className="text-xl font-semibold text-green-400 mt-2 max-w-lg opacity-0"
+            className="text-lg md:text-xl font-semibold text-green-400 mt-2 max-w-lg opacity-0"
             style={{ "--translate-x": "50px" } as React.CSSProperties}
           >
             {typedText}
             <span className="blinking-cursor">|</span>
           </p>
         </div>
-
-        <div className="w-1/2 flex justify-center items-center animate-fade-in">
+        <div className="w-full md:w-1/2 flex justify-center items-center mt-8 md:mt-0 animate-fade-in">
           <img
             src="./images/dev.png"
             alt="Developer"
-            className="w-full h-auto custom-bounce animate-delay-900"
+            className="w-full md:w-3/4 h-auto custom-bounce animate-delay-900"
           />
         </div>
       </div>
