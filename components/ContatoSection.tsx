@@ -14,7 +14,7 @@ const ContatoSection = () => {
           {/* Botão GitHub */}
           <div className="social-button github">
             <a href="https://github.com/Ribeirotmr" target="_blank" className="side">
-              <img src="/images/github2.svg" alt="GitHub" className="h-12 w-12" />
+              <img src="./images/github2.svg" alt="GitHub" className="h-12 w-12" />
               GitHub
             </a>
             <div className="side"></div>
